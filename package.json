@@ -1,0 +1,20 @@
+{
+  "name": "mongoose-user-plugin",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha  -R spec -c ./test/*Test.js"
+  },
+  "keywords": [],
+  "author": "Vitor Silva Lima - vitor.lima2@fatec.sp.gov.br",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^3.5.0",
+    "mongoose": "^4.11.9",
+    "should": "^12.0.0"
+  }
+}
