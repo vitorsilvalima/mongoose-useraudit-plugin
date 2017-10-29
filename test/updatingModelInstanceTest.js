@@ -28,6 +28,11 @@ describe('updating model instance', function() {
             updatedInstance.should.have.property('createdBy');
             updatedInstance.createdBy.should.be.a.String;
             updatedInstance.createdBy.should.be.eql('Vitor');
+
+            updatedInstance.should.have.property('updatedBy');
+            updatedInstance.updatedBy.should.be.a.String;
+            updatedInstance.updatedBy.should.be.eql('Vitor');
+            
             done();
 
         })
@@ -39,15 +44,21 @@ describe('updating model instance', function() {
     it('should have the updatedBy field updated', function(done){
 
         const testInstance = new TestModel({ createdBy: 'Vitor', updatedBy: 'Vitor'});
-        const updatedObj = { updatedBy: 'Wilson' };
+        const updatedObj = { createdBy: 'Wilson', updatedBy: 'Wilson' };
 
         testInstance.save()
-        .then( savedInstance => TestModel.findByIdAndUpdate(savedInstance._id, updatedObj))
+        .then( savedInstance => TestModel.findByIdAndUpdate(savedInstance._id, updatedObj, { new: true }))
         .then( updatedInstance => {
+
+
+            updatedInstance.should.have.property('createdBy');
+            updatedInstance.createdBy.should.be.a.String;
+            updatedInstance.createdBy.should.be.eql('Vitor');
 
             updatedInstance.should.have.property('updatedBy');
             updatedInstance.updatedBy.should.be.a.String;
-            updatedInstance.updatedBy.should.be.eql('Vitor');
+            updatedInstance.updatedBy.should.be.eql('Wilson');
+
             done();
 
         })

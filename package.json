@@ -1,6 +1,6 @@
 {
   "name": "mongoose-useraudit-plugin",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "",
   "main": "index.js",
   "directories": {
@@ -30,5 +30,5 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/vitorsilvalima/mongoose-useraudit-plugin.git"
-  },
+  }
 }

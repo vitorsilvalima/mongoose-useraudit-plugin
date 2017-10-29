@@ -16,9 +16,7 @@ module.exports = exports = (schema, options)  => {
 
         this._update =  this._update || {};
         
-        if(this._update['$set']){
-            delete this._update['$set']['createdBy'];
-        }
+        delete this._update['createdBy'];
 
         next();
     })
